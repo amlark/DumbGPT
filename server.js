@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const natural = require("natural");
 const classifier = new natural.BayesClassifier();
 
-// Train the classifier with sample data
 classifier.addDocument("Hello", "greeting");
 classifier.addDocument("Hi there", "greeting");
 classifier.addDocument("Hey", "greeting");
@@ -97,12 +96,10 @@ classifier.addDocument("What's the best recipe?", "recipe");
 classifier.addDocument("How do I cook something amazing?", "recipe");
 classifier.addDocument("What's your favorite recipe?", "recipe");
 
-// Moon landing hoax
 classifier.addDocument("Was the moon landing fake?", "moonLanding");
 classifier.addDocument("Did they really go to the moon?", "moonLanding");
 classifier.addDocument("Is the moon landing a hoax?", "moonLanding");
 
-// Flat Earth
 classifier.addDocument("Is the Earth flat?", "flatEarth");
 classifier.addDocument("What is the evidence for a flat Earth?", "flatEarth");
 classifier.addDocument(
@@ -110,27 +107,22 @@ classifier.addDocument(
   "flatEarth"
 );
 
-// Lizard people
 classifier.addDocument("Do lizard people control the world?", "lizardPeople");
 classifier.addDocument("Who are the lizard people?", "lizardPeople");
 classifier.addDocument("What's the deal with lizard people?", "lizardPeople");
 
-// Chemtrails
 classifier.addDocument("Are chemtrails real?", "chemtrails");
 classifier.addDocument("What is the purpose of chemtrails?", "chemtrails");
 classifier.addDocument("Why do people believe in chemtrails?", "chemtrails");
 
-// Illuminati
 classifier.addDocument("Who are the Illuminati?", "illuminati");
 classifier.addDocument("What is the purpose of the Illuminati?", "illuminati");
 classifier.addDocument("Do the Illuminati control everything?", "illuminati");
 
-// Bigfoot
 classifier.addDocument("Is Bigfoot real?", "bigfoot");
 classifier.addDocument("What is the evidence for Bigfoot?", "bigfoot");
 classifier.addDocument("Why do people believe in Bigfoot?", "bigfoot");
 
-// Alien abduction
 classifier.addDocument("Are alien abductions real?", "alienAbduction");
 classifier.addDocument(
   "What is the evidence for alien abductions?",
@@ -141,17 +133,14 @@ classifier.addDocument(
   "alienAbduction"
 );
 
-// Crop circles
 classifier.addDocument("Are crop circles made by aliens?", "cropCircles");
 classifier.addDocument("What is the purpose of crop circles?", "cropCircles");
 classifier.addDocument("Why do people believe in crop circles?", "cropCircles");
 
-// HAARP
 classifier.addDocument("What is HAARP?", "haarp");
 classifier.addDocument("Is HAARP a secret weapon?", "haarp");
 classifier.addDocument("What is the conspiracy theory about HAARP?", "haarp");
 
-// Time travel
 classifier.addDocument("Is time travel possible?", "timeTravel");
 classifier.addDocument("Has anyone ever traveled through time?", "timeTravel");
 classifier.addDocument(
@@ -159,7 +148,6 @@ classifier.addDocument(
   "timeTravel"
 );
 
-// Teleportation
 classifier.addDocument("Can humans teleport?", "teleportation");
 classifier.addDocument(
   "What is the science behind teleportation?",
@@ -170,7 +158,6 @@ classifier.addDocument(
   "teleportation"
 );
 
-// Bermuda Triangle
 classifier.addDocument(
   "What is the mystery of the Bermuda Triangle?",
   "bermudaTriangle"
@@ -184,7 +171,6 @@ classifier.addDocument(
   "bermudaTriangle"
 );
 
-// Atlantis
 classifier.addDocument("What is the story of Atlantis?", "atlantis");
 classifier.addDocument("Where was Atlantis located?", "atlantis");
 classifier.addDocument(
@@ -192,17 +178,14 @@ classifier.addDocument(
   "atlantis"
 );
 
-// Ghosts
 classifier.addDocument("Are ghosts real?", "ghosts");
 classifier.addDocument("What is the evidence for ghosts?", "ghosts");
 classifier.addDocument("Why do people believe in ghosts?", "ghosts");
 
-// UFOs
 classifier.addDocument("Are UFOs real?", "ufos");
 classifier.addDocument("What is the evidence for UFOs?", "ufos");
 classifier.addDocument("Why do people believe in UFOs?", "ufos");
 
-// Ancient aliens
 classifier.addDocument("Did aliens visit Earth in the past?", "ancientAliens");
 classifier.addDocument(
   "What is the evidence for ancient aliens?",
@@ -213,19 +196,16 @@ classifier.addDocument(
   "ancientAliens"
 );
 
-// Area 51
 classifier.addDocument("What is the mystery of Area 51?", "area51");
 classifier.addDocument("Are there any explanations for Area 51?", "area51");
 classifier.addDocument("What happens in Area 51?", "area51");
 
-// ESP
 classifier.addDocument("Is extrasensory perception real?", "esp");
 classifier.addDocument("What is the evidence for ESP?", "esp");
 classifier.addDocument("Why do people believe in ESP?", "esp");
 
 classifier.train();
 
-// Predefined responses for different categories
 const predefinedResponses = {
   greeting: [
     "Hello! How can I help you today?",
@@ -403,10 +383,8 @@ app.use(bodyParser.json());
 app.post("/process-input", (req, res) => {
   const userInput = req.body.userInput;
 
-  // Classify user input
   const classification = classifier.classify(userInput);
 
-  // Generate a response based on the classification
   const responseCategory = predefinedResponses[classification];
 
   let response;
