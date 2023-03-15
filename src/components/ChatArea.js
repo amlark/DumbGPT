@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 const ChatArea = ({ messages, onSendMessage }) => {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -14,9 +15,10 @@ const ChatArea = ({ messages, onSendMessage }) => {
 
   const sendMessage = (event) => {
     event.preventDefault();
-    if (input.trim() === "") return;
+    const inputValue = inputRef.current.value;
+    if (inputValue.trim() === "") return;
 
-    onSendMessage(input);
+    onSendMessage(inputValue);
     setInput("");
   };
 
@@ -37,6 +39,7 @@ const ChatArea = ({ messages, onSendMessage }) => {
       </div>
       <form onSubmit={sendMessage} className="flex">
         <input
+          ref={inputRef}
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
