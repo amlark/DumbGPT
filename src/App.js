@@ -53,7 +53,7 @@ function App() {
 
     // Request the server for a response
     try {
-      const response = await fetch("http://localhost:5001/process-input", {
+      const response = await fetch("/process-input", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
