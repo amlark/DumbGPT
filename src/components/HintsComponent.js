@@ -10,13 +10,13 @@ const HintsComponent = () => {
         </div>
 
         <div className="bg-white p-2 rounded-md shadow-md">
-          <p className="text-base">"What's the best recipe?"</p>
+          <p className="text-base">"What's the deal with lizard people?"</p>
         </div>
         <div className="bg-white p-2 rounded-md shadow-md">
           <p className="text-base">"What happens in dreams?"</p>
         </div>
         <div className="bg-white p-2 rounded-md shadow-md">
-          <p className="text-base">"Tell me about lizards"</p>
+          <p className="text-base">"How Internet works?"</p>
         </div>
       </div>
     </div>
