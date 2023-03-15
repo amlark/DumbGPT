@@ -73,7 +73,7 @@ function App() {
     }
 
     if (isNewConversation) {
-      const newItemTitle = `New Conversation ${menuItems.length + 1}`;
+      const newItemTitle = `Chat ${menuItems.length + 1}`;
       const newItem = {
         id: menuItems.length + 1,
         title: newItemTitle,
