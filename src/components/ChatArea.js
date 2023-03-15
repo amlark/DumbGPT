@@ -25,7 +25,7 @@ const ChatArea = ({ messages, onSendMessage }) => {
       key={messages.length}
       className="bg-white rounded-lg shadow p-4 flex-grow ml-0 sm:ml-4 w-full sm:w-auto"
     >
-      <div className="overflow-y-auto h-72 sm:h-96 mb-4">
+      <div className="overflow-y-auto h-96 sm:h-96 mb-4">
         {messages.map((message, index) => (
           <div
             key={index}
