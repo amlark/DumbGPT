@@ -398,5 +398,5 @@ app.post("/process-input", (req, res) => {
   res.json({ response });
 });
 
-// const PORT = 5001;
-// app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+const PORT = 5001;
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
