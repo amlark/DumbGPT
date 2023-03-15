@@ -8,12 +8,12 @@ const Sidebar = ({
 }) => {
   return (
     <div className="bg-white rounded-lg md:shadow p-4 w-64 flex flex-col h-[500px]">
-      <h2 className="text-2xl font-semibold mb-4">Conversations</h2>
+      <h2 className="text-2xl font-semibold mb-4">Chat history</h2>
       <button
         onClick={onCreateNewConversation}
         className="bg-blue-600 text-white py-1 px-4 rounded mb-4"
       >
-        New Conversation
+        New chat
       </button>
       <div className="overflow-y-auto flex-grow">
         <ul>
@@ -34,7 +34,7 @@ const Sidebar = ({
         onClick={onClearConversations}
         className="bg-red-600 text-white py-1 px-4 rounded mt-4 mb-2"
       >
-        Clear Conversations
+        Clear history
       </button>
     </div>
   );
